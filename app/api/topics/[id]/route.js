@@ -10,7 +10,7 @@ export async function PUT(request, { params }) {
     return NextResponse.json({ message: "Title updated" }, { status: 200 });
 }
 
-export async function GET(request, params) {
+export async function GET(request, { params }) {
     const { id } = params;
     await ConnectMongoDB();
     const topic = await Topic.findOne({ _id: id });
